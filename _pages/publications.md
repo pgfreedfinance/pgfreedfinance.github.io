@@ -1,16 +1,11 @@
 ---
 layout: archive
-title: "Publications"
+title: "Research"
 permalink: /publications/
 author_profile: true
 ---
 
-
-&nbsp;
-
-## **Working Papers**
-
-&nbsp;
+## **<u>Working Papers</u>** 
 
 
 [**Personal Financial Distress and Litigious Behavior**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4760919) (sole-authored) (JMP), 
@@ -35,11 +30,9 @@ author_profile: true
 [**The Paycheck Protection Program (PPP) from the Small Business Perspective: Did the PPP Help Alleviate Financial and Economic Constraints?**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3908707)  (with Allen Berger, Jonathan Scott, and Siwen Zhang)
 - **Conferences and Seminars:** SFA (2022), Temple University* (2022)
 
-&nbsp;
 
-## **Work in Progress**
+## **<u>Work in Progress</u>** 
 
-&nbsp;
 
 **Housing Wealth and Labor Action** (sole-authored)
 - **Awards:** Doctoral Fellows Proposal Award (Grant)
