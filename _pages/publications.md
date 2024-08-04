@@ -16,7 +16,7 @@ author_profile: true
 - **Awards:** FMA Best Paper Award Semifinalist 2023, CFI Best Student Paper Award (DMSB)
   
 <span style="color: #0B0719;">**Aggregate Workforce Sleep and Corporate Innovation**</span>  (with Gianni De Bruyn), 
-- R&R at <span style="color: #0000FF;">**_<u>Research Policy</u>_**</span>
+- R&R at <span style="color: #0000FF;">**_<u>Research Policy</u>_**</span> (ABS 4*)
 - **Conferences and Seminars:** Academy of Management Annual Meeting* (2023)
   
 [<span style="color: #0B0719;">**Mood Swings and Money: The Role of Financial Technology in Household Credit Demand**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4661150) (with Ran Duchin and John Hackney)
