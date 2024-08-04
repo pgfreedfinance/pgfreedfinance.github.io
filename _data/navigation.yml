@@ -8,7 +8,10 @@ main:
     url: /publications/
 
   - title: "Professional Activities"
-    url: /conferences/  
+    url: /conferences/ 
+
+  - title: "Teaching"
+    url: /teaching/   
 
 #  - title: "Talks"
 #    url: /talks/    
