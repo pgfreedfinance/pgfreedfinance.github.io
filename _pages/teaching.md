@@ -10,7 +10,7 @@ author_profile: true
 
 ### Primary Instructor:
 
-- Introduction to Real Estate and Urban Development, FINA 366, online, (Summer 2024)
+- Introduction to Real Estate and Urban Development, FINA 366, online, (Summer 2024) 
   - *Instructor Performance: 4.6/5*
 - Corporate Financial Analysis, FINA 365, online (Summer 2023)
   - *Instructor Performance: 4.8/5*
