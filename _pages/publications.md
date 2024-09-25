@@ -19,8 +19,8 @@ author_profile: true
 - R&R at <span style="color: #0000FF;">**_<u>Research Policy</u>_**</span> (ABS 4*, FT50)
 - **Conferences and Seminars:** Academy of Management Annual Meeting* (2023)
   
-[<span style="color: #0B0719;">**Mood Swings and Money: The Role of Financial Technology in Household Credit Demand**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4661150) (with Ran Duchin and John Hackney)
-- **Conferences and Seminars:** FIRS (2024), Old Dominion University* (2023), University of Washington Finance PhD Alumni Conference* (2022)
+[<span style="color: #0B0719;">**The Role of Sentiment in One-Click FinTech Borrowing**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4661150) (with Ran Duchin and John Hackney)
+- **Conferences and Seminars:** FIRS (2024), Boca-ECGI Corporate Finance and Governance Conference (2024), Old Dominion University* (2023), University of Washington Finance PhD Alumni Conference* (2022)
   
 [<span style="color: #0B0719;">**Cybersecurity Risk and Mortgage Lender Selection**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4254301) (with John Hackney)
 - **Conferences and Seminars:** FMA (2022), SFA (2022), University of South Carolina (2022)
@@ -30,15 +30,19 @@ author_profile: true
 
 
 ## **<u>Work in Progress</u>** 
+
+<span style="color: #0B0719;">**Financial Literacy and Financial Crime: A Regression Discontinuity Approach**</span> (with John Hackney)
+- **Conferences and Seminars:** Boca-ECGI Corporate Finance and Governance Conference (2024)
+- *Draft availiable soon*
+  
 <span style="color: #0B0719;">**Housing Wealth and Labor Action**</span> (sole-authored)
 - **Awards:** Doctoral Fellows Proposal Award (Grant)
 - *Preliminary results documented*
   
+<span style="color: #0B0719;">**Flexible Work and Household Financial Behavior**</span> (with Ran Duchin, John Hackney, and Da Ke)
+- *Preliminary results documented*
+
 <span style="color: #0B0719;">**Labor Market Sorting, Unions, and Financial Literacy**</span> (sole-authored)
 - *Preliminary results documented*
   
-<span style="color: #0B0719;">**Flexible Work and Household Financial Behavior**</span> (with Ran Duchin, John Hackney, and Da Ke)
-- *Preliminary results documented*
   
-<span style="color: #0B0719;">**Financial Literacy and Financial Crime: A Regression Discontinuity Approach**</span> (with John Hackney)
-- *Preliminary results documented*
