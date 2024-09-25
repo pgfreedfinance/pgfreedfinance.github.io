@@ -10,6 +10,7 @@ author_profile: true
 ### 2024 
 - Financial Intermediation Research Society* (FIRS)
 - CEPR European Household Finance Conference (Cyprus)
+- Boca Corporate Finance and Governance Conference (x2)
 - Financial Management Association Annual Meeting
 - University of South Carolina (x3)
 
