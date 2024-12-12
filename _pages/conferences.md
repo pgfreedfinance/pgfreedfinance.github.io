@@ -12,6 +12,8 @@ author_profile: true
 - CEPR European Household Finance Conference (Cyprus)
 - Boca Corporate Finance and Governance Conference (x2)
 - Financial Management Association Annual Meeting
+- University of Washington Finance PhD Alumni Conference*
+- Finance Research Association Conference (Invited Participant)
 - University of South Carolina (x3)
 
 ### 2023 
