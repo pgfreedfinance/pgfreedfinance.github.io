@@ -19,7 +19,7 @@ author_profile: true
 - R&R at <span style="color: #0000FF;">**_<u>Research Policy</u>_**</span> (ABS 4*, FT50)
 - **Conferences and Seminars:** Academy of Management Annual Meeting* (2023)
 
-<span style="color: #0B0719;">**Financial Literacy and Financial Crime: A Regression Discontinuity Approach**</span> (with John Hackney)
+[<span style="color: #0B0719;">**Financial Literacy and Financial Crime: A Regression Discontinuity Approach**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5097569) (with John Hackney)
 - Invited for <span style="color: #0000FF;">**_<u>Journal of Financial Economics</u>_**</span> Dual Submission (FRA)
 - **Conferences and Seminars:** Boca-ECGI Corporate Finance and Governance Conference (2024)
   
