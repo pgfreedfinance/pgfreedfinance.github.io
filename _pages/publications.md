@@ -15,10 +15,6 @@ author_profile: true
 - **Conferences and Seminars:** FIRS (2023), Cambridge Centre for Alternative Finance (2023), NFA (2023), FMA (2023), Australasian Finance and Banking Conference (2023), SFA (2023), Boca Corporate Finance and Governance Conference (2023), University of South Carolina (2022)
 - **Awards:** FMA Best Paper Award Semifinalist 2023, CFI Best Student Paper Award (DMSB)
   
-<span style="color: #0B0719;">**Workforce Sleep and Corporate Innovation**</span>  (with Gianni De Bruyn), 
-- R&R at <span style="color: #0000FF;">**_<u>Research Policy</u>_**</span> (ABS 4*, FT50)
-- **Conferences and Seminars:** Academy of Management Annual Meeting* (2023)
-
 [<span style="color: #0B0719;">**Financial Literacy and Financial Crime: A Regression Discontinuity Approach**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5097569) (with John Hackney)
 - Invited for <span style="color: #0000FF;">**_<u>Journal of Financial Economics</u>_**</span> Dual Submission (FRA)
 - **Conferences and Seminars:** Boca-ECGI Corporate Finance and Governance Conference (2024)
@@ -31,6 +27,12 @@ author_profile: true
   
 [<span style="color: #0B0719;">**The Paycheck Protection Program (PPP) from the Small Business Perspective: Did the PPP Help Alleviate Financial and Economic Constraints?**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3908707)  (with Allen Berger, Jonathan Scott, and Siwen Zhang)
 - **Conferences and Seminars:** SFA (2022), Temple University* (2022)
+
+
+## **<u>Publications</u>** 
+
+<span style="color: #0B0719;">**Workforce Sleep and Corporate Innovation**</span>  (with Gianni De Bruyn), 
+- <span style="color: #0000FF;">**_<u>Research Policy</u>_**</span>, Volume 54, Issue 3, 2025
 
 
 ## **<u>Work in Progress</u>** 
