@@ -7,16 +7,16 @@ author_profile: true
 ## **<u>Working Papers</u>** 
 
 [<span style="color: #0B0719;">**Personal Financial Distress and Litigious Behavior**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4760919) (sole-authored) (JMP) 
-- R&R at <span style="color: #0000FF;">**_<u>Review of Financial Studies</u>_**</span>
+- Revise and Resubmit at <span style="color: #0000FF;">**_<u>Review of Financial Studies</u>_**</span>
 - **Conferences and Seminars:** CEPR European Household Finance (Cyprus)
   
 [<span style="color: #0B0719;">**Insufficient Sleep and Intra-Day Financial Decision-Making**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4535348) (sole-authored) 
-- R&R at <span style="color: #0000FF;">**_<u>Management Science</u>_**</span>
+- Revise and Resubmit at <span style="color: #0000FF;">**_<u>Management Science</u>_**</span>
 - **Conferences and Seminars:** FIRS (2023), Cambridge Centre for Alternative Finance (2023), NFA (2023), FMA (2023), Australasian Finance and Banking Conference (2023), SFA (2023), Boca Corporate Finance and Governance Conference (2023), University of South Carolina (2022)
 - **Awards:** FMA Best Paper Award Semifinalist 2023, CFI Best Student Paper Award (DMSB)
   
 [<span style="color: #0B0719;">**Financial Literacy and Financial Crime: A Regression Discontinuity Approach**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5097569) (with John Hackney)
-- Invited for <span style="color: #0000FF;">**_<u>Journal of Financial Economics</u>_**</span> Dual Submission (FRA)
+- Reject and Resubmit at <span style="color: #0000FF;">**_<u>Journal of Financial Economics</u>_**</span>
 - **Conferences and Seminars:** Boca-ECGI Corporate Finance and Governance Conference (2024)
   
 [<span style="color: #0B0719;">**The Role of Sentiment in One-Click FinTech Borrowing**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4661150) (with Ran Duchin and John Hackney)
