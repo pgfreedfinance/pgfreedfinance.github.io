@@ -9,10 +9,15 @@ redirect_from:
 
 Thanks for visiting my site!
 
+I am an Assistant Professor of Finance at the Darden School of Business at the University of Virginia. 
 
-I am a fifth-year Ph.D. Candidate in Finance at the Darla Moore School of Business at the University of South Carolina. I conduct research broadly in the fields of household and behavioral finance, and several of my studies focus directly on issues related to FinTech. 
+My research is in household finance, law and finance, and consumer finance.
 
-I teach both managerial finance and real estate for undergraduate business majors at the University of South Carolina.
 
-I will join the Darden School of Business at the University of Virginia as an Assistant Professor of Finance in Fall 2025.
+email: freedp 'at' darden.virginia.edu
 
+Office 192B
+University of Virginia
+Darden School of Business
+100 Darden Blvd
+22903 Charlottesville, Virginia
