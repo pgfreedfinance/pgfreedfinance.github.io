@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 
-## University of South Carolina
+### **University of South Carolina**
 
 ### Primary Instructor:
 
