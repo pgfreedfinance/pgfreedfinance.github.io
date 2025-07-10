@@ -12,10 +12,9 @@ author_profile: true
 
 - Introduction to Real Estate and Urban Development, FINA 366, online, (Summer 2024) 
   - *Instructor Performance: 4.6/5*
-- Corporate Financial Analysis, FINA 365, online (Summer 2023)
+- Corporate Financial Analysis, FINA 365, online (Summer 2022, 2023)
   - *Instructor Performance: 4.8/5*
-- Corporate Financial Analysis, FINA 365, online (Summer 2022)
-  - *Instructor Performance: 4.8/5*
+
 
 ### Teaching Assistant:
 
