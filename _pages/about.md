@@ -13,7 +13,7 @@ I am an Assistant Professor of Finance at the Darden School of Business at the U
 
 My research is in household finance, law and finance, and real estate.
 
-## Contact Information
+## Contact Information:
 
 **Email:** [freedp@darden.virginia.edu](mailto:freedp@darden.virginia.edu)
 
