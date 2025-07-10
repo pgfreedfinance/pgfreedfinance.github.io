@@ -13,14 +13,14 @@ I am an Assistant Professor of Finance at the Darden School of Business at the U
 
 My research is in household finance, law and finance, and consumer finance.
 
+## Contact Information
 
-Contact Information
+**Email:** [freedp@darden.virginia.edu](mailto:freedp@darden.virginia.edu)
 
-Email:
-
-Office 192B
-University of Virginia
-Darden School of Business
-100 Darden Blvd
-22903 Charlottesville, Virginia
+**Office:** 
+Office 192B  
+University of Virginia  
+Darden School of Business  
+100 Darden Blvd  
+Charlottesville, VA 22903
 
