@@ -7,6 +7,28 @@ author_profile: true
 
 ## Presentations and Seminars (* Indicates presentation by coauthor)
 
+### 2026 
+- Eastern Finance Association (Scheduled)
+- Midwest Finance Association (Scheduled)
+
+### 2025 
+- Northern Finance Association (NFA)*
+- Stanford Financial Education Symposium
+- Virtual Household Finance Seminar
+- Arizona State University
+- University of Arizona
+- The Ohio State University
+- Boston College
+- Georgia Tech
+- University of Pittsburgh
+- UVA Darden
+- Michigan State University
+- Texas A&M
+- Georgetown University
+- Texas Christian University
+- Indiana University
+- Oklahoma State University*
+
 ### 2024 
 - Financial Intermediation Research Society* (FIRS)
 - CEPR European Household Finance Conference (Cyprus)
