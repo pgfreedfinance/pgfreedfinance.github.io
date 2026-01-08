@@ -11,7 +11,7 @@ author_profile: true
 - **Conferences and Seminars:** CEPR European Household Finance (Cyprus)
   
 [<span style="color: #0B0719;">**Insufficient Sleep and Intra-Day Financial Decision-Making**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4535348) (sole-authored) 
-- Revise and Resubmit at <span style="color: #0000FF;">**_<u>Management Science</u>_**</span>
+- Conditionally Accepted at <span style="color: #0000FF;">**_<u>Management Science</u>_**</span>
 - **Conferences and Seminars:** FIRS (2023), Cambridge Centre for Alternative Finance (2023), NFA (2023), FMA (2023), Australasian Finance and Banking Conference (2023), SFA (2023), Boca Corporate Finance and Governance Conference (2023), University of South Carolina (2022)
 - **Awards:** FMA Best Paper Award Semifinalist 2023, CFI Best Student Paper Award (DMSB)
   
