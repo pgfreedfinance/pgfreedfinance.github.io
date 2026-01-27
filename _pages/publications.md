@@ -20,6 +20,7 @@ author_profile: true
 - **Conferences and Seminars:** Boca-ECGI Corporate Finance and Governance Conference (2024)
   
 [<span style="color: #0B0719;">**The Role of Sentiment in One-Click FinTech Borrowing**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4661150) (with Ran Duchin and John Hackney)
+- Revise and Resubmit at the <span style="color: #0000FF;">**_<u>Review of Finance</u>_**</span>
 - **Conferences and Seminars:** FIRS (2024), Boca-ECGI Corporate Finance and Governance Conference (2024), Old Dominion University* (2023), University of Washington Finance PhD Alumni Conference* (2022)
   
 [<span style="color: #0B0719;">**Cybersecurity Risk and Mortgage Lender Selection**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4254301) (with John Hackney)
