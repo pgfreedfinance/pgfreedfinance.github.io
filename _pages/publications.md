@@ -14,6 +14,7 @@ author_profile: true
 [<span style="color: #0B0719;">**Financial Literacy and Financial Crime: A Regression Discontinuity Approach**</span>](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5097569) (with John Hackney)
 - Accepted at <span style="color: #0000FF;">**_<u>Journal of Financial Economics</u>_**</span>
 - **Conferences and Seminars:** Boca-ECGI Corporate Finance and Governance Conference (2024)
+- **Awards**: - **Outstanding Paper in Investments Award**, Eastern Finance Association
 
 ## **<u>Working Papers</u>** 
 
