@@ -355,6 +355,9 @@ const CSV_FILE = "us_retail_sample.csv";    // same folder as this file
 const ROUNDS = 5;
 const SEARCH_RADIUS_M = 75;                 // look for Street View this close to the commercial property (meters)
 const ALLOW_MOVING = true;                  // false = look around only, no walking
+// Shared high score list: the Web app URL of your Google Sheet's script (ends in /exec). Leave "" to keep
+// scores on each device only. It can also be set in config.js as window.GEOFINANCER_SCORES_URL.
+const SHARED_SCORES_URL = window.GEOFINANCER_SCORES_URL || "";
 const LEADERBOARD_SIZE = 100;            // players shown on the high score list
 const MUSIC_IN_ROUNDS = true;              // true = the jazz keeps playing during rounds (it pauses for the alarm)
 const ROUND_SECONDS = 60;                  // time per round
@@ -493,7 +496,7 @@ function show(id) {
   if (id !== "game") { stopTimer(); GameCats.stop(); }
   if (id === "title") updateWho();
   if (id === "about") $("aboutText").innerHTML = ABOUT_HTML;
-  if (id === "scores") renderBoard($("scoresList"), null);
+  if (id === "scores") showScoresScreen();
   if (id === "name") {
     $("nameInput").value = savedName();
     $("instInput").value = savedInst();
@@ -619,16 +622,49 @@ function renameOnBoard(name, inst) {
   const all = loadScores(), pid = playerId(), mine = all.find(s => s.pid === pid);
   if (mine && (mine.name !== name || (mine.inst || "") !== inst)) { mine.name = name; mine.inst = inst; storeScores(all); }
 }
-function renderBoard(ol, highlightPid) {
-  const top = loadScores().slice(0, LEADERBOARD_SIZE);
+function renderList(ol, list, highlightPid) {
+  const top = list.slice(0, LEADERBOARD_SIZE);
   ol.innerHTML = top.length
     ? top.map(s => `<li class="${highlightPid && s.pid === highlightPid ? "me" : ""}"><span class="n">${esc(s.name)}` +
-                   `${s.inst ? `<span class="inst"> (${esc(s.inst)})</span>` : ""}</span>${s.score.toLocaleString()}</li>`).join("")
+                   `${s.inst ? `<span class="inst"> (${esc(s.inst)})</span>` : ""}</span>${Number(s.score).toLocaleString()}</li>`).join("")
     : `<li><span class="n">No scores yet</span></li>`;
   // On a long list, scroll the player's own row into view
   const me = ol.querySelector("li.me");
   if (me) setTimeout(() => { const w = ol.parentElement; w.scrollTop = me.offsetTop - w.offsetTop - w.clientHeight / 2; }, 0);
-  if (ol.id === "scoresList") $("scoresNote").textContent = "Best score per player. Saved on this device only for now.";
+}
+function renderBoard(ol, highlightPid) { renderList(ol, loadScores(), highlightPid); }
+
+// ---------------- Shared high scores (Google Sheet) ----------------
+function withTimeout(promise, ms) {
+  return Promise.race([promise, new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]);
+}
+async function fetchSharedScores() {
+  const r = await withTimeout(fetch(SHARED_SCORES_URL + "?t=" + Date.now()), 10000);
+  const j = await r.json();
+  if (!j || !Array.isArray(j.scores)) throw new Error("bad reply");
+  return j.scores;
+}
+async function postSharedScore(entry) {
+  // Sent as plain text so the browser doesn't need extra permission checks from Google
+  const r = await withTimeout(fetch(SHARED_SCORES_URL, { method: "POST", body: JSON.stringify(entry) }), 12000);
+  const j = await r.json();
+  if (!j || !Array.isArray(j.scores)) throw new Error("bad reply");
+  return j.scores;
+}
+async function showScoresScreen() {
+  const ol = $("scoresList"), note = $("scoresNote"), pid = playerId();
+  if (!SHARED_SCORES_URL) {
+    renderBoard(ol, pid);
+    note.textContent = "Best score per player. Saved on this device only for now.";
+    return;
+  }
+  ol.innerHTML = `<li><span class="n loading">Loading scores</span></li>`;
+  note.textContent = "Best score per player, shared with everyone who plays.";
+  try { renderList(ol, await fetchSharedScores(), pid); }
+  catch (e) {
+    renderBoard(ol, pid);
+    note.textContent = "Couldn't reach the shared list right now, so these are this device's scores.";
+  }
 }
 
 // ---------------- Loading data and Google Maps ----------------
@@ -1113,7 +1149,8 @@ function ordinal(n) {
 
 async function finish() {
   const pid = playerId();
-  const r = saveScore({ pid, name: player, inst: playerInst, score: total, time: Date.now() });
+  const entry = { pid, name: player, inst: playerInst, score: total, time: Date.now() };
+  const r = saveScore(entry);                       // this device's record: personal best
   const rank = loadScores().findIndex(s => s.pid === pid) + 1;
   const max = ROUNDS * (5000 + (QUESTIONS_PER_ROUND + (RATE_QUESTION ? 1 : 0)) * QUESTION_POINTS);
   $("finalScore").innerHTML =
@@ -1121,9 +1158,17 @@ async function finish() {
     `<p class="muted">out of ${max.toLocaleString()} &nbsp;·&nbsp; ${esc(player)}${playerInst ? `, ${esc(playerInst)}` : ""}</p>` +
     `<div id="finalPb" style="visibility:hidden">` +
     (r.isNew
-      ? `<p class="pb">${r.prev >= 0 ? "New personal best!" : "First score on the board!"} &nbsp;Rank #${rank}</p>`
-      : `<p>Your best: <span class="pb">${r.best.toLocaleString()}</span> &nbsp;·&nbsp; rank #${rank}</p>`) + `</div>`;
-  renderBoard($("finalList"), pid);
+      ? `<p class="pb">${r.prev >= 0 ? "New personal best!" : "First score on the board!"} &nbsp;Rank <span id="finalRank">#${rank}</span></p>`
+      : `<p>Your best: <span class="pb">${r.best.toLocaleString()}</span> &nbsp;·&nbsp; rank <span id="finalRank">#${rank}</span></p>`) + `</div>`;
+  if (SHARED_SCORES_URL) {
+    // Send the score to the shared list while the total counts up; show the shared ranking when it answers
+    $("finalList").innerHTML = `<li><span class="n loading">Saving your score</span></li>`;
+    postSharedScore(entry).catch(() => fetchSharedScores()).then(list => {
+      renderList($("finalList"), list, pid);
+      const i = list.findIndex(s => s.pid === pid);
+      if ($("finalRank")) $("finalRank").textContent = i >= 0 ? `#${i + 1}` : "outside the top " + LEADERBOARD_SIZE;
+    }).catch(() => renderBoard($("finalList"), pid));
+  } else renderBoard($("finalList"), pid);
   show("final");
   // The total counts up like the round scores, then fireworks for a strong game
   skipAnim = false;
