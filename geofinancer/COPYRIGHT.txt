@@ -1,0 +1,8 @@
+GeoFinancer
+(c) 2026 Paul Freed. All rights reserved.
+
+The code, design and artwork in this folder may not be copied, modified or republished without
+permission. The MIT license in the root of this repository covers only the website theme
+(Academic Pages / Minimal Mistakes) and does not apply to anything in this folder.
+
+Data and imagery belong to their sources, credited on the game's About page.
