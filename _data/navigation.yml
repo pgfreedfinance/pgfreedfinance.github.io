@@ -11,7 +11,11 @@ main:
     url: /conferences/ 
 
   - title: "Teaching"
-    url: /teaching/   
+    url: /teaching/ 
+
+  - title: "GeoFinancer"
+    url: /geofinancer/ 
+    
 
 #  - title: "Talks"
 #    url: /talks/    
