@@ -256,8 +256,10 @@
     <div id="nameErr"></div>
     <div class="buttons">
       <button class="px" id="startBtn">Start</button>
+      <button class="px blue" id="guestBtn" type="button">Play as guest</button>
       <button class="px blue" data-go="title">Back</button>
     </div>
+    <p class="muted" style="margin:14px 0 0">Playing as a guest? You can skip the name, but your scores won't be recorded.</p>
   </div>
 </div>
 
@@ -526,6 +528,7 @@ window.addEventListener("musicpref", syncMusicBtn);
 const savedName = () => { try { return localStorage.getItem("geofinancer_name") || ""; } catch (e) { return ""; } };
 const savedInst = () => { try { return localStorage.getItem("geofinancer_inst") || ""; } catch (e) { return ""; } };
 let playerInst = "";
+let guest = false;                 // playing without a name: nothing is saved or sent to the high score list
 function playerId() {
   let id = null;
   try { id = localStorage.getItem("geofinancer_pid"); } catch (e) {}
@@ -546,7 +549,7 @@ $("playBtn").onclick = () => {
   let seen = true; try { seen = !!localStorage.getItem("geofinancer_howto"); } catch (e) {}
   if (!n) show("name");
   else if (!seen) show("howto");                 // saved a name but never saw the instructions
-  else { player = n; playerInst = savedInst(); startGame(); }
+  else { guest = false; player = n; playerInst = savedInst(); startGame(); }
 };
 function startFromName() {
   const name = $("nameInput").value.trim().replace(/\s+/g, " ");
@@ -559,7 +562,7 @@ function startFromName() {
     $("nameErr").textContent = "Institution: letters, numbers, spaces and . , & ' ( ) / - only";
     return;
   }
-  player = name; playerInst = inst;
+  player = name; playerInst = inst; guest = false;
   let firstTime = false;
   try {
     localStorage.setItem("geofinancer_name", name);
@@ -575,8 +578,15 @@ $("nameInput").addEventListener("keydown", e => { if (e.key === "Enter") startFr
 $("instInput").addEventListener("keydown", e => { if (e.key === "Enter") startFromName(); });
 $("howtoGo").onclick = () => {
   try { localStorage.setItem("geofinancer_howto", "1"); } catch (e) {}
+  if (guest) return startGame();
   const n = savedName();
   if (n) { player = n; playerInst = savedInst(); startGame(); } else show("name");
+};
+// Play without a name: the game works the same, but scores aren't saved anywhere
+$("guestBtn").onclick = () => {
+  guest = true; player = "Guest"; playerInst = "";
+  let seen = true; try { seen = !!localStorage.getItem("geofinancer_howto"); } catch (e) {}
+  if (!seen) show("howto"); else startGame();
 };
 
 // ---------------- Leaderboard ----------------
@@ -1148,6 +1158,7 @@ function ordinal(n) {
 }
 
 async function finish() {
+  if (guest) return finishGuest();
   const pid = playerId();
   const entry = { pid, name: player, inst: playerInst, score: total, time: Date.now() };
   const r = saveScore(entry);                       // this device's record: personal best
@@ -1171,6 +1182,27 @@ async function finish() {
   } else renderBoard($("finalList"), pid);
   show("final");
   // The total counts up like the round scores, then fireworks for a strong game
+  skipAnim = false;
+  await wait(250);
+  await countUp($("finalBig"), total, 2200);
+  if (!$("final").classList.contains("on")) return;
+  if (total > FINAL_FIREWORKS_OVER) fireworks($("finalBig"), total > 30000 ? 5 : 3);
+  $("finalPb").style.visibility = "visible";
+}
+
+// A guest's game over: same count-up and fireworks, nothing saved
+async function finishGuest() {
+  const max = ROUNDS * (5000 + (QUESTIONS_PER_ROUND + (RATE_QUESTION ? 1 : 0)) * QUESTION_POINTS);
+  $("finalScore").innerHTML =
+    `<div class="big" id="finalBig">0</div>` +
+    `<p class="muted">out of ${max.toLocaleString()} &nbsp;·&nbsp; Guest</p>` +
+    `<div id="finalPb" style="visibility:hidden"><p>You played as a guest, so this score isn't recorded. ` +
+    `Enter a name next time to get on the high score list.</p></div>`;
+  if (SHARED_SCORES_URL) {
+    $("finalList").innerHTML = `<li><span class="n loading">Loading scores</span></li>`;
+    fetchSharedScores().then(list => renderList($("finalList"), list, null)).catch(() => renderBoard($("finalList"), null));
+  } else renderBoard($("finalList"), null);
+  show("final");
   skipAnim = false;
   await wait(250);
   await countUp($("finalBig"), total, 2200);
@@ -2733,13 +2765,15 @@ function drawBoardLabel() {
     for (const c of str) { if (c === ' ') { x += 3; continue; } const g = glyph(F, c); for (let rr = 0; rr < g.length; rr++) for (let k = 0; k < g[rr].length; k++) if (g[rr][k] === '#') px(x + k, y + rr, r() < 0.14 ? mix(col, BOARD, 0.4) : col); x += g[0].length + 1; }
     return w;
   };
-  const w = put('Real Estate Finance', 40, CHALK.yellow);
-  for (let x = Math.round(cx - w / 2); x < Math.round(cx + w / 2); x++) if (r() < 0.85) px(x, 49, CHALK.yellow);
-  put(labelDate, 53, CHALK.white);
+  // the date's bottom edge lines up with the bottom of the About button (board row 73)
+  put('For Use in FIN 8046:', 43, CHALK.white);
+  const w = put('Real Estate Finance', 53, CHALK.yellow);
+  for (let x = Math.round(cx - w / 2); x < Math.round(cx + w / 2); x++) if (r() < 0.85) px(x, 62, CHALK.yellow);
+  put(labelDate, 66, CHALK.white);
   // NPV = sum_{t=1}^{n} CF_t / (1+k)^t, top-left corner of the board
   const chalkAt = (str, x, y, font, col) => { let cx2 = x; for (const c of str) { if (c === ' ') { cx2 += 3; continue; } const g = glyph(font, c); for (let rr = 0; rr < g.length; rr++) for (let k = 0; k < g[rr].length; k++) if (g[rr][k] === '#') px(cx2 + k, y + rr, r() < 0.14 ? mix(col, BOARD, 0.4) : col); cx2 += g[0].length + 1; } return cx2 - 1; };
   const sw = (str, font) => { let w = 0; for (const c of str) w += c === ' ' ? 3 : glyph(font, c)[0].length + 1; return w - 1; };
-  const ex = 66, mid = 20, col = CHALK.white;
+  const ex = 66, mid = 19, col = CHALK.white;
   let x = chalkAt('NPV', ex, mid - 3, F, CHALK.yellow) + 4;
   x = chalkAt('=', x, mid - 3, F, col) + 4;
   const sx = x; chalkAt('Σ', sx, mid - 3, F, col);
@@ -2761,7 +2795,7 @@ function render() {
   // 1) room, board and floor shadows (scene pixels)
   setT(fb); fb.set(bg);
   for (let y = 98; y < 182; y++) for (let x = 62; x < 420; x++) { const k = y * W + x; if (chalk[k]) fb[k] = chalk[k]; else if (smudge[k]) fb[k] = smudge[k]; }
-  for (let y = 8; y < 66; y++) for (let x = 58; x < 422; x++) { const k = y * W + x; if (labelBuf[k]) fb[k] = labelBuf[k]; }
+  for (let y = 8; y < 80; y++) for (let x = 58; x < 422; x++) { const k = y * W + x; if (labelBuf[k]) fb[k] = labelBuf[k]; }
   drawRain(); drawRadiatorSteam();
   profShadow(); for (const c of CATS) if (c.present) catShadow(c);
   if (MOOD === 'dusk') {
